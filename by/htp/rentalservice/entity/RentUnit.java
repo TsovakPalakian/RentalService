@@ -2,6 +2,8 @@ package by.htp.rentalservice.entity;
 
 import java.util.Date;
 
+import by.htp.rentalservice.enumcontainer.TimeInterval;
+
 public class RentUnit {
 	private Equipment equipment;
 	private Client client;

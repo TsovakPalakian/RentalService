@@ -1,24 +1,28 @@
 package by.htp.rentalservice.entity;
 
-public class Equipment extends Category {
-	private Category category;
+import by.htp.rentalservice.enumcontainer.Category;
+
+public abstract class Equipment {
 	private String title;
 	private int weight;
 	private int sizeEquip;
 	private double price;
 	private String color;
+	private Category category;
 	
 	public Equipment() {}
-	public Equipment(String title, int sizeEquip, double price, String color) {
+	public Equipment(String title, int sizeEquip, double price, String color, Category category) {
 		this.title = title;
 		this.sizeEquip = sizeEquip;
 		this.price = price;
+		this.category = category;
 	}
-	public Equipment(String title, int weight, int sizeEquip, double price, String color) {
+	public Equipment(String title, int weight, int sizeEquip, double price, String color, Category category) {
 		this.title = title;
 		this.weight = weight;
 		this.sizeEquip = sizeEquip;
 		this.price = price;
+		this.category = category;
 	}
 	public String getTitle() {
 		return title;
@@ -95,8 +99,6 @@ public class Equipment extends Category {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return super.toString();
 	}
-	
 }
