@@ -13,7 +13,7 @@ import by.htp.rentalservice.entity.secondaryclass.ElbowPads;
 import by.htp.rentalservice.entity.secondaryclass.InflatableChair;
 import by.htp.rentalservice.entity.secondaryclass.KneePads;
 import by.htp.rentalservice.entity.secondaryclass.LifeVest;
-import by.htp.rentalservice.entity.secondaryclass.AdditionalAccessories;
+import by.htp.rentalservice.entity.secondaryclass.Accessory;
 import by.htp.rentalservice.entity.secondaryclass.Paddles;
 import by.htp.rentalservice.entity.secondaryclass.Pump;
 import by.htp.rentalservice.entity.secondaryclass.RollerSkatesGlove;
@@ -25,69 +25,123 @@ import by.htp.rentalservice.enumcontainer.TypeOfBoat;
 
 public class DataOnTenantAndLease {
 	private Equipment[] equipments;
-	private AdditionalAccessories[] additionalAccessories;
+	private Accessory[] accessories;
 	private Client[] clients = new Client[10];
 	private Rent[] rents = new Rent[10];
 	
 	public DataOnTenantAndLease() {
 		
-		addAdditionalAccessories();
+		addAccessory();
 		
 		addEquipment();
 
 	}
 	
-	private void addAdditionalAccessories() {
+	private void addAccessory() {
 		
-		additionalAccessories = new AdditionalAccessories[14];
+		accessories = new Accessory[20];
 		
-		additionalAccessories[0] = new BicycleChair("Polisport Koolah FF", 
+		accessories[0] = new BicycleChair("Polisport Koolah FF", 
 				new Size(74.8, 45, 39.8), 
-				0.30);
-		additionalAccessories[1] = new BicycleComputer("Vinca Sport V-3500 black/green", 
+				0.30,
+				11, 
+				Category.CHILDREN);
+		
+		accessories[1] = new BicycleComputer("Vinca Sport V-3500 black/green", 
 				new Size(15, 10, 7), 
-				0.2);
-		additionalAccessories[2] = new BicycleHelmet("Longus Funn 2.0 Police", 
-				new Size(49), 
-				0.25);
-		additionalAccessories[3] = new BicycleLock("HQBC Pear 120", 
+				0.2, 
+				24);
+		
+		accessories[2] = new BicycleHelmet("Longus Funn 2.0M Police", 
+				new Size(17, 18, 19, 20, 21, 22, 23), 
+				0.25,
+				15,
+				Category.MALE);
+		
+		accessories[3] = new BicycleHelmet("Longus Funn 2.0F Police", 
+				new Size(15, 16, 17, 18, 19, 20, 21), 
+				0.25,
+				15,
+				Category.FEMALE);
+		
+		accessories[4] = new BicycleHelmet("Longus Funn 1.0 Police", 
+				new Size(7, 8, 9, 10, 11, 12, 13, 14), 
+				0.20,
+				10,
+				Category.CHILDREN);
+		
+		accessories[5] = new BicycleLock("HQBC Pear 120", 
 				new Size(1, 120, 1), 
-				0.1);
-		additionalAccessories[4] = new ElbowPads("Ennui City S ", 
-				new Size(18, 17, 9), 
+				0.1,
+				36);
+		
+		accessories[6] = new ElbowPads("Ennui City XS ", 
+				new Size(15, 16, 17, 18, 19, 20, 21), 
 				0.2, 
+				30,
 				Category.UNISEX);
-		additionalAccessories[5] = new ElbowPads("Ennui City XS ", 
-				new Size(9, 8, 4), 
+		
+		accessories[7] = new ElbowPads("Ennui City S ", 
+				new Size(7, 8, 9, 10, 11, 12, 13, 14), 
 				0.2, 
+				10,
 				Category.CHILDREN);
-		additionalAccessories[6] = new InflatableChair("\"Amely\" С-НС Chrome", 
+		
+		accessories[8] = new InflatableChair("\"Amely\" С-НС Chrome", 
 				new Size(50, 30, 25), 
-				0.3);
-		additionalAccessories[7] = new KneePads("Ennui Street S", 
-				new Size(18, 17, 9), 
-				0.2, 
+				0.3,
+				19);
+		
+		accessories[9] = new KneePads("Ennui Street XS", 
+				new Size(15, 16, 17, 18, 19, 20, 21), 
+				0.2,
+				30,
 				Category.UNISEX);
-		additionalAccessories[8] = new KneePads("Ennui Street XS", 
-				new Size(18, 17, 9), 
-				0.2, 
+		
+		accessories[10] = new KneePads("Ennui Street S", 
+				new Size(7, 8, 9, 10, 11, 12, 13, 14), 
+				0.2,
+				10,
 				Category.CHILDREN);
-		additionalAccessories[9] = new LifeVest("MedNovtex", 
-				new Size(35),
-				0.4);
-		additionalAccessories[10] = new Paddles("Qingdao", 
-				new Size(150, 20, 15), 
-				1.5);
-		additionalAccessories[11] = new Pump("Intex Giant Bellows 68610", 
-				new Size(30), 
-				0.15);					
-		additionalAccessories[12] = new RollerSkatesGlove("Ennui BLVD S ", 
-				new Size(18, 17, 9), 
-				0.2, 
+		
+		accessories[11] = new LifeVest("MedNovtex", 
+				new Size(35, 36, 37, 38, 39, 40, 41, 42),
+				0.4,
+				17, 
 				Category.UNISEX);
-		additionalAccessories[13] = new RollerSkatesGlove("Ennui BLVD XS ", 
-				new Size(9, 8, 4), 
+		
+		accessories[12] = new LifeVest("MedNovtex", 
+				new Size(27, 28, 29, 30, 31, 32, 33, 34),
+				0.4,
+				11, 
+				Category.CHILDREN);
+		
+		accessories[13] = new Paddles("Qingdao", 
+				new Size(150, 20, 15), 
+				1.5,
+				17);
+		
+		accessories[14] = new Pump("Intex Giant Bellows 68610", 
+				new Size(300, 50, 50), 
+				0.15, 
+				39);
+		
+		accessories[15] = new RollerSkatesGlove("Ennui BLVD XS ", 
+				new Size(12, 13, 14, 15, 16, 17), 
+				0.2,
+				15,
+				Category.MALE);
+		
+		accessories[16] = new RollerSkatesGlove("Ennui BLVD XS ", 
+				new Size(10, 11, 12, 13, 14, 15), 
+				0.2,
+				15,
+				Category.FEMALE);
+		
+		accessories[17] = new RollerSkatesGlove("Ennui BLVD S ", 
+				new Size(2, 3, 4, 5, 6, 7), 
 				0.2, 
+				10,
 				Category.CHILDREN);
 	}
 	
@@ -164,12 +218,14 @@ public class DataOnTenantAndLease {
 	
 	public void  printClients() {
 		{
-			System.out.println("_______________________________________________________________________________________________");
+			System.out.println("__________________________________________________________________");
+			System.out.println("|| Customer name:            | Series and ID of the passport:   ||");
+			System.out.println("__________________________________________________________________");
 		}
 		for (Client c : clients) {
 			if (c != null) {
 				System.out.println(c);
-				System.out.println("_______________________________________________________________________________________________");
+				System.out.println("__________________________________________________________________");
 			}
 		}
 	}
@@ -186,37 +242,53 @@ public class DataOnTenantAndLease {
 			}
 		}
 	}
+
+	
+	public void printAccessories() {
+		{
+			System.out.print("________________________________________________________________________");
+			System.out.println("_______________________________________________________________________");
+			System.out.print("|| Accessory name:      | Title:                            | ");
+			System.out.println("Size:                                | Price: BYN  | Units:      | Category:   ||");
+			System.out.print("________________________________________________________________________");
+			System.out.println("_______________________________________________________________________");
+		}
+		for (Accessory c : accessories) {
+			if (c != null) {
+				System.out.println(c);
+				System.out.print("________________________________________________________________________");
+				System.out.println("_______________________________________________________________________");
+			}
+		}
+	}
+	
+	public void printEquipments() {
+		System.out.println("|| Inventory name:  |" 
+				+ " Title:                          |"	
+				+ " Weight: kg  |"
+				+ " Price: BYN  |" 
+				+ " Size:                                |" 
+				+ " Color:      |" 
+				+ " Category:   |"
+				+ " Individual characteristics      |" 
+				+ " Units:  |" 
+				+ " Taken accessories ||");
+		System.out.println();
+		for (Equipment c : equipments) {
+			if (c != null) {
+				System.out.println(c);
+				System.out.print("________________________________________________________________________");
+				System.out.println("_______________________________________________________________________");
+			}
+		}
+	}
 	
 	public Equipment[] getEquipments() { 
 		return equipments;
 	}
 	
-	public void printAdditionalAccessories() {
-		{
-			System.out.print("______________________________________________________________________");
-			System.out.println("____________________________________________________________________");
-		}
-		for (AdditionalAccessories c : additionalAccessories) {
-			if (c != null) {
-				System.out.println(c);
-				System.out.print("______________________________________________________________________");
-				System.out.println("____________________________________________________________________");
-			}
-		}
-	}
-	
-	public void printEquipment() {
-		for (Equipment c : equipments) {
-			if (c != null) {
-				System.out.println(c);
-				System.out.print("___________________________________________________________________________________________________________________________________");
-				System.out.println("_________________________________________________________________________________________________________________________________");
-			}
-		}
-	}
-	
-	public AdditionalAccessories[] getAdditionalAccessories() {
-		return additionalAccessories;
+	public Accessory[] getAccessories() {
+		return accessories;
 	}
 
 	public Client[] getClients() {

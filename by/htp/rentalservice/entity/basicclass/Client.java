@@ -1,49 +1,58 @@
 package by.htp.rentalservice.entity.basicclass;
 
-public class Client {
+import by.htp.rentalservice.entity.Formatter;
+
+public class Client implements Formatter {
+	
 	private String name;
-	private String passSeries;
-	private int passID;
+	private String surname;
+	private String passportSeries;
+	private int passportID;
 	
 	public Client() {}
-	public Client(String name, String passSeries, int passID) {
+	
+	public Client(String name, String surname, String passportSeries, int passportID) {
 		this.name = name;
-		this.passSeries = passSeries;
-		this.passID = passID;
+		this.surname = surname;
+		this.passportSeries = passportSeries;
+		this.passportID = passportID;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPassSeries() {
-		return passSeries;
-	}
-	public void setPassSeries(String passSeries) {
-		this.passSeries = passSeries;
-	}
-	public int getPassID() {
-		return passID;
-	}
-	public void setPassID(int passID) {
-		this.passID = passID;
-	}
-	@Override
-	public String toString() {
-		String s0 = ""+name;
-		for (int i = (""+name).length(); i < 25; i++) {
-			s0 += " "; 
-		}
-		String s1 = ""+passSeries;
-		for (int i = (""+passSeries).length(); i < 4; i++) {
-			s1 += " "; 
-		}
-		String s2 = ""+passID;
-		for (int i = (""+passID).length(); i < 10; i++) {
-			s2 += " "; 
-		}
-		return String.format("|| Customer name: %s | Series and ID of the passport: %s %s ||", s0, s1, s2);
+	
+	public String getSurname() {
+		return surname;
 	}
 	
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+	public String getPassportSeries() {
+		return passportSeries;
+	}
+
+	public void setPassportSeries(String passportSeries) {
+		this.passportSeries = passportSeries;
+	}
+
+	public int getPassportID() {
+		return passportID;
+	}
+
+	public void setPassportID(int passportID) {
+		this.passportID = passportID;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("|| %s |  %s %s ||", formatTable(name + " " + surname, 25), 
+				 formatTable("" + passportSeries, 4), formatTable("" + passportID, 26));
+	}
 }

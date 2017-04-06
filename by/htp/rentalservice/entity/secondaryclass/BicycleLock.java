@@ -1,14 +1,14 @@
 package by.htp.rentalservice.entity.secondaryclass;
 
 import by.htp.rentalservice.entity.Size;
-import by.htp.rentalservice.enumcontainer.Color;
 
-public class BicycleLock extends AdditionalAccessories {
+public class BicycleLock extends Accessory {
 
 	public BicycleLock() {}
 
-	public BicycleLock(String title, Size aSize, double price) {
-		super(title, aSize, price);
+	public BicycleLock(String title, Size aSize, double price, int quantity) {
+		
+		super(title, aSize, price, quantity);
+		
 	}
-	
 }

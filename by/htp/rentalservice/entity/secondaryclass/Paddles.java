@@ -1,13 +1,14 @@
 package by.htp.rentalservice.entity.secondaryclass;
 
 import by.htp.rentalservice.entity.Size;
-import by.htp.rentalservice.enumcontainer.Color;
 
-public class Paddles extends AdditionalAccessories {
+public class Paddles extends Accessory {
 
 	public Paddles() {}
 
-	public Paddles(String title, Size aSize, double price) {
-		super(title, aSize, price);
+	public Paddles(String title, Size aSize, double price, int quantity) {
+		
+		super(title, aSize, price, quantity);
+		
 	}
 }

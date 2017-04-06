@@ -4,6 +4,7 @@ import java.text.ParseException;
 
 import by.htp.rentalservice.entity.DataOnTenantAndLease;
 import by.htp.rentalservice.entity.Rent;
+import by.htp.rentalservice.entity.basicclass.Bicycle;
 import by.htp.rentalservice.entity.basicclass.Client;
 import by.htp.rentalservice.enumcontainer.TimeInterval;
 import by.htp.rentalservice.logic.CalculationOf;
@@ -11,11 +12,12 @@ import by.htp.rentalservice.logic.CalculationOf;
 public class Main {
 	public static void main(String ...strings ) throws ParseException {
 		DataOnTenantAndLease lease = new DataOnTenantAndLease();
-		lease.addClient(new Client("Piter", "KH", 123), new Client("Alex", "GT", 124), new Client("Max", "SF", 153), new Client("Nick", "LK", 223));
+		lease.addClient(new Client("Piter", "Nikiforov", "KH", 123), new Client("Alex", "Nikiforov", "GT", 124),
+				new Client("Max", "Nikiforov", "SF", 153), new Client("Nick", "Nikiforov", "LK", 223));
 		//System.out.println();
 		//lease.printClients();
-		//lease.printAdditionalAccessories();
-		//lease.printEquipment();
+		//lease.printAccessories();
+		lease.printEquipments();
 		//.getEquipments()[0].setWithAccess(true);
 		//lease.getEquipments()[0].setAdditionalAcc(lease.getAdditionalAccessories()[0], lease.getAdditionalAccessories()[1]);
 		/*Rent r1 = new Rent(lease.getClients()[0], 
@@ -39,7 +41,7 @@ public class Main {
 				lease.getEquipments()[1]);
 		System.out.println(String.format("The rent is %1.4s rubles.", CalculationOf.rent(r3)));
 		lease.addRent(/*r1, r2,*/ r3);
-		lease.printRents();
+		//lease.printRents();
 		//lease.printEquipment();
 	}
 }

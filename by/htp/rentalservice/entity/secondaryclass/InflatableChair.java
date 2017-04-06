@@ -1,14 +1,14 @@
 package by.htp.rentalservice.entity.secondaryclass;
 
 import by.htp.rentalservice.entity.Size;
-import by.htp.rentalservice.enumcontainer.Color;
 
-public class InflatableChair extends AdditionalAccessories {
+public class InflatableChair extends Accessory {
 
 	public InflatableChair() {}
 
-	public InflatableChair(String title, Size aSize, double price) {
-		super(title, aSize, price);
+	public InflatableChair(String title, Size aSize, double price, int quantity) {
+		
+		super(title, aSize, price, quantity);
+		
 	}
-	
 }
